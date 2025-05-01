@@ -1,5 +1,5 @@
 {
-    "name": "astoptalents-website",
+    "name": "alvarosegovia-website",
     "private": true,
     "version": "1.0.0",
     "browserslist": [
@@ -10,7 +10,7 @@
     "type": "module",
     "config": {
         "browsersync": {
-            "proxy": "astoptalents.dev",
+            "proxy": "alvarosegovia.dev",
             "port": 5500
         },
         "js": {
