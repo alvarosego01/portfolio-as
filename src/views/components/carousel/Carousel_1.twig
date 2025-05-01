@@ -1,0 +1,154 @@
+{% macro Component(param = {
+slides: [],
+}) %}
+
+{% from 'components/buttons/Button.twig' import Component as Button %}
+{% from 'components/cards/IconCard_1.twig' import Component as IconCard_1 %}
+
+{% set slides = param.slides %}
+
+{% if slides and slides|length > 0 %}
+<div class="relative Carousel_1" data-aos="zoom-out" data-aos-delay="250">
+  <div
+    class="absolute top-0 bottom-0 left-0 right-0 z-10 grid grid-cols-1 gap-16 controls md:grid-cols-2 mt-auto pcTab:mt-0 pcTab:w-full mx-auto sm:w-[550px] w-11/12 sm:h-[550px] pcTab:h-full">
+
+    <div class="relative col-span-2 pcTab:col-span-1 controlsContent">
+
+      <div
+        class="absolute left-0 right-0 flex flex-row justify-between w-full h-10 my-auto bottom-1/4 sm:top-0 sm:bottom-0 controls">
+
+        <div
+          class="relative flex items-center justify-center w-10 h-10 rounded-full shadow-lg bg-mainWhite text-darkBlue left control prev -left-2 xs:left-2 sm:left-4 hover:cursor-pointer">
+          <i class='text-2xl relative top-[1px] bx bx-chevron-left'></i>
+        </div>
+        <div
+          class="relative flex items-center justify-center w-10 h-10 rounded-full shadow-lg bg-mainWhite text-darkBlue right control next -right-2 xs:right-2 sm:right-4 hover:cursor-pointer">
+          <i class='text-2xl relative top-[1px] bx bx-chevron-right'></i>
+        </div>
+
+      </div>
+      <div class="absolute w-full bottom-6 bullets">
+        <div class="flex items-center justify-center w-full h-4 gap-3 bulletsContent">
+          {# <div class="w-2 h-2 rounded-full bg-darkBlue "></div>
+          <div class="w-2 h-2 rounded-full bg-mainWhite"></div> #}
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  {% for slide in slides %}
+
+  <div class="flex flex-col-reverse gap-10 lg:gap-16 pcTab:grid pcTab:grid-cols-2 elementSlider">
+
+    <div class="relative image">
+      <div class="overflow-hidden rounded-[50px] mx-auto w-fit imageContent ">
+        <img
+          class="object-cover h-auto mx-auto sm:w-[550px] sm:h-[550px] pcTab:w-[500px] pcTab:h-[500px] animate__animated animate__pulse"
+          src="{{ slide.image.src }}" alt="{{ slide.image.alt }}">
+
+      </div>
+
+      {% if slide.button.text != '' %}
+      <div
+        class="absolute flex items-center justify-center w-full -bottom-24 buttonSection animate__animated animate__pulse">
+        <div class="flex justify-center ">
+          {{ Button({
+          text: slide.button.text,
+          url: slide.button.url,
+          type: 'primary'
+          }) }}
+
+        </div>
+      </div>
+      {% endif %}
+
+    </div>
+
+    <div class="flex items-center justify-center pcTab:justify-start info">
+      {{ IconCard_1({
+      icon: slide.info.icon | raw,
+      title: slide.info.title,
+      desc: slide.info.desc,
+      centerResponsive: true,
+      }) }}
+
+    </div>
+
+  </div>
+
+  {% endfor %}
+  {% endif %}
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const carousel = document.querySelector('.Carousel_1');
+      if (!carousel) return; // No carousel found
+
+      const slides = Array.from(carousel.querySelectorAll('.elementSlider'));
+      const prevBtn = carousel.querySelector('.control.prev');
+      const nextBtn = carousel.querySelector('.control.next');
+      const bulletsContainer = carousel.querySelector('.bulletsContent');
+
+      let current = 0;
+      const total = slides.length;
+
+      if (total === 0) return; // No slides to show
+
+      console.log('prevBtn', prevBtn);
+      console.log('nextBtn', nextBtn);
+
+      // 1) Generar bullets
+      bulletsContainer.innerHTML = slides
+        .map((_, i) =>
+          `<div class="w-[10px] h-[10px] rounded-full ${i === 0 ? 'bg-darkBlue' : 'bg-lavenderGray'}" data-index="${i}"></div>`
+        ).join('');
+      console.log('bulletsContainer', bulletsContainer);
+      const bullets = Array.from(bulletsContainer.children);
+
+
+      // 2) Función para actualizar visibilidad
+      function showSlide(idx) {
+        console.log('showSlide', showSlide);
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('hide', i !== idx);
+        });
+        bullets.forEach((b, i) => {
+          b.classList.toggle('bg-darkBlue', i === idx);
+          b.classList.toggle('bg-lavenderGray', i !== idx);
+        });
+      }
+
+      // 3) Eventos flechas
+      prevBtn.addEventListener('click', () => {
+        current = (current - 1 + total) % total;
+        showSlide(current);
+      });
+      nextBtn.addEventListener('click', () => {
+        current = (current + 1) % total;
+        showSlide(current);
+      });
+
+      // 4) Eventos bullets
+      bullets.forEach(b => {
+        b.addEventListener('click', () => {
+          current = Number(b.dataset.index);
+          showSlide(current);
+        });
+      });
+
+      // 5) Inicializar (ocultar todos excepto el primero)
+      slides.forEach((s, i) => { if (i !== 0) s.classList.add('hide'); });
+      showSlide(0);
+
+      // 6) Auto change slide every 2 minutes
+      setInterval(() => {
+        current = (current + 1) % total;
+        showSlide(current);
+      }, 40000);
+
+    });
+  </script>
+
+  {% endmacro %}

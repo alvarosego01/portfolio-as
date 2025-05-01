@@ -1,0 +1,44 @@
+{% from 'components/cards/TalentCard_1.twig' import Component as TalentCard_1 %}
+
+  <div class="max-w-6xl px-10 mx-auto sm:px-6">
+
+    <div class="sectionTop">
+
+      <h2 class="mx-auto mb-10 text-center h3 title text-darkBlue" data-aos="zoom-out" data-aos-delay="100">
+        Meet the talent<br class="mobileBreak"> powering U.S. teams
+      </h2>
+
+      <p class="mb-12 text-base text-center text-grayish" data-aos="zoom-out" data-aos-delay="150">
+        Explore a curated selection of top remote professionals across marketing, operations, tech, <br class="textBreak">
+        customer success, and more — all vetted, full-time, and ready to help your business grow.
+      </p>
+
+    </div>
+
+    <div class="sectionContent">
+
+      <div class="grid grid-cols-1 gap-6 mb-10 cards md:grid-cols-2 pcTab:grid-cols-3">
+
+        {% if talents|length > 0 %}
+            {% for item in talents %}
+
+              <div data-aos="zoom-out" data-aos-delay="{{ loop.index * 50 }}">
+                {{
+                  TalentCard_1({
+                    img: item.img,
+                    title: item.title,
+                    subTitle: item.subTitle,
+                    desc: item.desc,
+                    subTag: item.subTag
+                  })
+                }}
+              </div>
+
+            {% endfor %}
+        {% endif %}
+
+      </div>
+
+    </div>
+
+  </div>

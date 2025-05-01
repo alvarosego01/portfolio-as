@@ -1,0 +1,573 @@
+{% extends "base.twig" %}
+
+{% from 'components/buttons/Button.twig' import Component as Button %}
+{% from 'components/cards/PostCard_1.twig' import Component as PostCard1 %}
+{% from 'components/cards/IconCard_1.twig' import Component as IconCard_1 %}
+{% from 'components/content/ImageInfo_1.twig' import Component as ImageInfo_1 %}
+{% from 'components/content/BannerCta_1.twig' import Component as BannerCta_1 %}
+
+{% block content %}
+
+<section class="relative overflow-hidden homeHeader homeSection_00">
+
+  <div class="relative max-w-6xl px-4 mx-auto sm:px-6">
+    <div class="grid grid-cols-3 gap-10 pt-32 pb-12 pcTab:gap-0 md:pt-52 md:pb-20">
+
+      <div
+        class="flex flex-col items-start justify-center col-span-3 mx-auto text-center pcTab:col-span-2 md:mx-0 md:text-left info">
+        {# <div data-aos="zoom-out">
+          <div
+            class="relative text-sm text-gray-300 bg-gray-800 rounded-full inline-block px-4 py-1 mb-6 before:content-[''] before:absolute before:-z-10 before:inset-0 before:-m-0.5 before:bg-gradient-to-t before:from-gray-800 before:to-gray-800 before:via-gray-600 before:rounded-full">
+            <div class="text-gray-400">
+              Lorem ipsum dolor sit amet consectetur
+            </div>
+          </div>
+        </div> #}
+        <h1 class="w-full mb-6 leading-normal text-center text-tealBlue pcTab:text-left h1 font-uncut-sans"
+          data-aos="zoom-out" data-aos-delay="100">
+          <span class="text-darkBlue">
+            Hire the top 1% talent <br class="textBreak">
+            from LATAM and save
+          </span> <br class="textBreak">
+          up to 80% compared <br class="textBreak">
+          to U.S. costs
+
+        </h1>
+        <p class="w-full mb-10 text-xl text-center pcTab:text-left text-grayish " data-aos="zoom-out"
+          data-aos-delay="150">
+          ASTopTalent connects your U.S. business with elite remote talent from <br class="textBreak">
+          Latin America, empowering you to scale with top-tier professionals.
+          <br><br>
+          Unlock significant cost savings, boost efficiency, and eliminate <br class="textBreak">
+          administrative hassles, all while accessing the best talent.
+        </p>
+
+        <div
+          class="max-w-xs mx-auto space-y-4 pcTab:mx-0 sm:max-w-none sm:flex sm:justify-center md:justify-start sm:space-y-0 sm:space-x-4"
+          data-aos="zoom-out" data-aos-delay="200">
+
+          <div>
+            {{ Button({
+            text: "Book your free consultation",
+            url: "#0",
+            r_icon: "<i class='bx bx-right-arrow-alt'></i>",
+            type: 'primary'
+            }) }}
+          </div>
+
+        </div>
+
+      </div>
+
+      <div
+        class="relative col-span-3 mx-auto text-center pcTab:col-span-1 pcTab:right-0 lg:right-16 md:mx-0 md:text-left image "
+        data-aos="zoom-out" data-aos-delay="250">
+        <img class="mx-auto h-[400px] lg:h-[600px] md:max-w-none" src="{{ get_file('/images/Imagen banner ppal.png') }}">
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="mb-10 pcTab:mb-20 homeSection_01">
+
+  <div class="max-w-6xl px-4 mx-auto sm:px-6">
+
+    <div class="px-10 py-24 lg:px-20 rounded-[50px] contentCard bg-lightBlue">
+
+      <div class="mb-16 sectionTop" data-aos="zoom-out" data-aos-delay="100">
+
+        <h2
+          class="flex flex-col justify-center gap-2 mx-auto mb-10 font-normal text-center pcTab:flex-row h3 title text-darkBlue">
+          <strong>
+            Empower your U.S. business with ASTopTalent
+          </strong>
+        </h2>
+
+      </div>
+
+      <div class="sectionContent ">
+
+        <div class="hidden grid-cols-4 pcTab:grid desktop">
+
+          <div class="col-span-1 mb-4 info1" data-aos="zoom-out" data-aos-delay="100">
+            <h3 class="mb-2 text-xl font-bold text-center text-darkBlue">
+              Remote talent
+              recruitment
+            </h3>
+            <p class="text-sm text-center text-grayish">
+              Access top-tier talent from Latin America, with our expert recruitment process that brings you the best
+              professionals for your U.S. business needs.
+            </p>
+          </div>
+          <div class="col-span-1 col-start-3 info2" data-aos="zoom-out" data-aos-delay="150">
+            <h3 class="mb-2 text-xl font-bold text-center text-darkBlue">
+              Virtual collaboration platform
+            </h3>
+            <p class="text-sm text-center text-grayish">
+              Our platform allows your team to collaborate effectively, with real-time communication tools and
+              avatar-based interaction in a fully virtual office environment.
+            </p>
+          </div>
+          <div class="col-span-4 my-4 imageSteps" data-aos="zoom-out" data-aos-delay="200">
+            <img src="{{ get_file('/images/step_talent_desktop.svg') }}" alt="choose talent steps mobile">
+          </div>
+          <div class="col-span-1 col-start-2 info3 " data-aos="zoom-out" data-aos-delay="250">
+            <h3 class="mb-2 text-xl font-bold text-center text-darkBlue">
+              Talent<br> management
+            </h3>
+            <p class="text-sm text-center text-grayish">
+              End-to-end talent management services—from recruitment to onboarding and payroll—ensuring seamless
+              integration of remote teams.
+            </p>
+          </div>
+          <div class="col-span-1 col-start-4 info4" data-aos="zoom-out" data-aos-delay="300">
+            <h3 class="mb-2 text-xl font-bold text-center text-darkBlue">
+              Back office & administrative
+            </h3>
+            <p class="text-sm text-center text-grayish">
+              We manage all your administrative tasks, from payroll to compliance, allowing you to focus on scaling your
+              business without the burden of managing operations.
+            </p>
+          </div>
+
+        </div>
+        <div class="relative flex flex-row items-center justify-center mx-auto w-fit pcTab:hidden mobile">
+
+          <div class="relative flex flex-col justify-between w-10/12 gap-10 mx-auto sm:w-6/12 info">
+
+            <div class="flex flex-col gap-2 info1" data-aos="zoom-out" data-aos-delay="150">
+              <img src="{{ get_file('/images/step_1.png') }}" alt="steps mobile 1" class="mx-auto step">
+              <h3 class="mb-2 text-xl font-bold text-center text-darkBlue">
+                Discovery Phase:
+              </h3>
+              <p class="text-[16px] text-center text-grayish">
+                We define the ideal remote
+                talent by aligning with your
+                goals, culture, and tech needs
+              </p>
+            </div>
+
+            <div class="flex flex-col gap-2 info2" data-aos="zoom-out" data-aos-delay="150">
+              <img src="{{ get_file('/images/step_2.png') }}" alt="steps mobile 2" class="mx-auto step">
+              <h3 class="mb-2 text-xl font-bold text-center text-darkBlue">
+                Talent Matching Phase:
+              </h3>
+              <p class="text-[16px] text-center text-grayish">
+                We screen remote talent with
+                interviews and tests to ensure
+                top-qualified candidates for your team
+              </p>
+            </div>
+
+            <div class="flex flex-col gap-2 info3" data-aos="zoom-out" data-aos-delay="200">
+              <img src="{{ get_file('/images/step_3.png') }}" alt="steps mobile 3" class="mx-auto step">
+              <h3 class="mb-2 text-xl font-bold text-center text-darkBlue">
+                Final Candidate Presentation:
+              </h3>
+              <p class="text-[16px] text-center text-grayish">
+                We deliver pre-vetted remote
+                candidates with clear, detailed
+                profiles to streamline your
+                hiring decisions
+              </p>
+            </div>
+
+            <div class="flex flex-col gap-2 info4" data-aos="zoom-out" data-aos-delay="250">
+              <img src="{{ get_file('/images/step_4.png') }}" alt="steps mobile 4" class="mx-auto step">
+              <h3 class="mb-2 text-xl font-bold text-center text-darkBlue">
+                Onboarding Meeting:
+              </h3>
+              <p class="text-[16px] text-center text-grayish">
+                We ensure smooth remote
+                hires with onboarding and
+                ongoing support for
+                seamless integration
+              </p>
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="mb-20 homeSection_05">
+  {% include "pages/home/sections/ChooseSlider.twig" %}
+</section>
+
+<section class="mb-10 pcTab:mb-20 homeSection_02">
+
+  <div class="max-w-6xl px-10 mx-auto sm:px-6">
+
+    <div class="sectionTop">
+
+      <h2 class="mx-auto mb-10 font-bold text-center h3 title text-darkBlue" data-aos="zoom-out" data-aos-delay="100">
+        What makes ASTopTalent different?
+      </h2>
+
+      {# <p class="mb-10 text-base text-center text-grayish" data-aos="zoom-out" data-aos-delay="150">
+        Stay ahead in remote hiring with expert tips, success stories, <br>
+        and top Latin American talent.
+      </p> #}
+
+    </div>
+
+    <div class="w-full sectionContent">
+
+      <div class="grid w-full grid-cols-1 gap-10 mb-10 pcTab:gap-x-20 cards md:grid-cols-12">
+
+        <div class="col-span-1 md:col-span-4 card" data-aos="zoom-out" data-aos-delay="100">
+          {{
+          PostCard1({
+          src: get_file('/images/Custom Talent Solutions 1.png'),
+          alt: 'Custom talent solutions',
+          title: 'Custom talent<br class="textBreak"> solutions',
+          desc: 'We provide personalized recruitment solutions that meet your business’s unique needs, ensuring the
+          right fit for every role.'
+          })
+          }}
+        </div>
+        <div class="col-span-1 md:col-span-4 card" data-aos="zoom-out" data-aos-delay="150">
+          {{
+          PostCard1({
+          src: get_file('/images/Virtual Office Platform 1.png'),
+          alt: 'Virtual office platform',
+          title: 'Virtual office<br class="textBreak"> platform',
+          desc: 'Our platform simulates the in-office experience remotely, allowing teams to collaborate, interact, and
+          stay productive from anywhere.'
+          })
+          }}
+        </div>
+        <div class="col-span-1 md:col-span-4 card" data-aos="zoom-out" data-aos-delay="250">
+          {{
+          PostCard1({
+          src: get_file('/images/Full Administrative Management 1.png'),
+          alt: 'Full administrative management',
+          title: 'Full administrative<br class="textBreak"> management',
+          desc: 'We handle payroll, taxes, and compliance, freeing you from administrative tasks so you can focus on
+          business growth.'
+          })
+          }}
+        </div>
+        <div class="col-span-1 md:col-start-3 md:col-span-4 card" data-aos="zoom-out" data-aos-delay="300">
+          {{
+          PostCard1({
+          src: get_file('/images/Flexible Talent Solutions.png'),
+          alt: 'Flexible talent solutions',
+          title: 'Flexible talent<br class="textBreak"> solutions',
+          desc: 'Scale your team quickly and efficiently with flexible recruitment solutions that adapt to your business
+          needs.'
+          })
+          }}
+        </div>
+        <div class="col-span-1 md:col-start-7 md:col-span-4 card" data-aos="zoom-out" data-aos-delay="350">
+          {{
+          PostCard1({
+          src: get_file('/images/Local Expertise, Global Reach 1.png'),
+          alt: 'Local expertise, global reach',
+          title: 'Local expertise,<br class="textBreak"> global reach',
+          desc: 'Our recruitment specialists combine deep knowledge of LATAM talent with a strong understanding of U.S.
+          business needs, ensuring the perfect match every time.'
+          })
+          }}
+        </div>
+      </div>
+
+      {# <div class="sectionButton">
+        <div class="flex justify-center " data-aos="zoom-out" data-aos-delay="300">
+          {{ Button({
+          text: "Explore Articles",
+          url: "#0",
+          type: 'primary'
+          }) }}
+        </div>
+      </div> #}
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="mb-10 pcTab:mb-20 homeSection_06">
+
+  <div class="max-w-6xl px-10 mx-auto sm:px-6">
+
+    <div class="sectionTop">
+
+      <h2 class="mx-auto mb-10 text-center h3 title text-darkBlue" data-aos="zoom-out" data-aos-delay="100">
+        Why Latin America?
+      </h2>
+
+    </div>
+
+    <div class="sectionContent">
+
+      <div class="w-full mb-10 image" data-aos="zoom-out" data-aos-delay="150">
+        <img class="block object-cover rounded-[50px] mx-auto overflow-hidden w-auto h-[300px] md:h-[500px] "
+          src="{{ get_file('/images/talent_team_banner_01.svg') }}">
+      </div>
+
+      <div class="flex justify-center info">
+
+        <div class="grid grid-cols-1 mb-10 gap-x-6 pcTab:gap-x-36 gap-y-14 cards pcTab:grid-cols-2 ">
+
+          <div class="col-span-1 element" data-aos="zoom-out" data-aos-delay="200">
+            {{
+            IconCard_1({
+              icon: "<img class='w-auto h-14' src='" ~ get_file('/images/icons/icon_globe.png') ~ "'>" ,
+              title: 'Seamless collaboration <br class="textBreak">
+              across time zones:',
+              desc: 'Latin American countries share similar time <br class="textBreak">
+              zones with the U.S., ensuring smooth real-time <br class="textBreak">
+              collaboration throughout the workday.',
+              align: 'left',
+              centerResponsive: true, })
+            }}
+          </div>
+            <div class="col-span-1 element" data-aos="zoom-out" data-aos-delay="250">
+              {{
+              IconCard_1({
+              icon: "<img class='w-auto h-14' src='" ~ get_file('/images/icons/icon_english.png') ~ "'>" ,
+              title: 'Fluent english, <br class="textBreak">
+              ready for business:',
+              desc: 'All candidates are rigorously screened for excellent <br class="textBreak">
+              spoken and written English, ensuring they<br class="textBreak">
+              can contribute from day one.',
+              align: 'left',
+              centerResponsive: true })
+              }}
+            </div>
+              <div class="col-span-1 element" data-aos="zoom-out" data-aos-delay="300">
+                {{
+                IconCard_1({
+                icon: "<img class='w-auto h-14' src='" ~ get_file('/images/icons/icon_budget.png') ~ "'>" ,
+                title: 'High-Quality talent <br class="textBreak">
+                at a fraction of the cost:',
+                desc: 'Latin American salaries are 50–70% lower than U.S. <br class="textBreak">
+                equivalents, allowing you to build world-class teams <br class="textBreak">
+                without exceeding your budget.',
+                align: 'left',
+                centerResponsive: true
+               })
+              }}
+              </div>
+                <div class="col-span-1 element" data-aos="zoom-out" data-aos-delay="350">
+                  {{
+                  IconCard_1({
+                  icon: "<img class='w-auto h-14' src='" ~ get_file('/images/icons/icon_together.png') ~ "'>" ,
+                  title: 'Cultural fit for <br class="textBreak">
+                  seamless integration:',
+                  desc: 'LATAM talent is highly experienced in remote work <br class="textBreak">
+                  dynamics and adaptable to U.S. business culture,<br class="textBreak">
+                  ensuring smooth team integration..
+                  <br class="textBreak">
+                  <br class="textBreak">',
+                  align: 'left',
+                  centerResponsive: true
+              })
+               }}
+                </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+</section>
+
+<section class="mb-10 pcTab:mb-20 homeSection_03">
+
+  <div class="max-w-6xl px-4 mx-auto sm:px-6">
+
+    <div class="sectionTop">
+
+      <h2 class="mx-auto mb-10 text-center h3 title text-darkBlue" data-aos="zoom-out" data-aos-delay="100">
+        Our process: How we bring <br class="textBreak">
+        top talent to your U.S. <br class="textBreak">
+        business
+      </h2>
+
+    </div>
+
+    <div class="flex flex-col gap-y-20 sectionContent">
+
+      {{
+      ImageInfo_1({
+      image: get_file('/images/Step 1_ Describe the Role 2.png'),
+      alt: 'step 1 process to bring talent',
+      title: 'Step 1: Describe the role',
+      desc: "We take the time to understand your business and the role you're looking to fill. This allows us to create
+      a tailored job listing that attracts the best candidates from our database of over 50,000 pre-vetted
+      professionals.",
+      side: 'left'
+      })
+      }}
+      {{
+      ImageInfo_1({
+      image: get_file('/images/Step 2_ We Search & Vet 2.png'),
+      alt: 'step 2 process to bring talent',
+      title: 'Step 2: We search & vet',
+      desc: "We leverage our network of over 40 million LATAM remote candidates to find the perfect match for your
+      needs. Each candidate undergoes a rigorous vetting process, including interviews, English proficiency tests, and
+      reference checks.",
+      side: 'right'
+      })
+      }}
+      {{
+      ImageInfo_1({
+      image: get_file('/images/Step 3_ Hire & Onboarding 2.png'),
+      alt: 'step 3 process to bring talent',
+      title: 'Step 3: Hire & onboarding',
+      desc: "Once you choose the perfect candidate, we ensure a smooth onboarding process. Our team takes care of all
+      compliance, payroll, and tax documentation, ensuring your new hire is ready to go from day one.",
+      side: 'left'
+      })
+      }}
+      {{
+      ImageInfo_1({
+      image: get_file('/images/Ongoing Support 3.png'),
+      alt: 'step 4 process to bring talent',
+      title: 'Step 4: Ongoing support & satisfaction guarantee',
+      desc: "We provide continuous support and a satisfaction guarantee. If your new hire isn’t the perfect fit, we
+      offer a free replacement. We’re committed to ensuring your success every step of the way.",
+      side: 'right'
+      })
+      }}
+    </div>
+
+  </div>
+
+</section>
+
+<section class="mb-24 homeSection_03">
+  {% include "pages/home/sections/TalentsSection.twig" %}
+</section>
+
+{#
+<section class="mb-10 pcTab:mb-20 homeSection_04">
+
+  <div class="max-w-6xl px-4 mx-auto sm:px-6">
+
+    <div class="px-10 py-20 relative rounded-[50px] contentCard bg-darkBlue">
+
+      <div class="absolute top-0 bottom-0 left-0 right-0 block w-full h-full bg-cover bg-overlay"
+        style="background-image: url('{{ get_file('/images/overlays/nodes_lines_bg.svg') }}'); background-repeat: no-repeat">
+      </div>
+
+      <div class="sectionTop">
+        <h2 class="mx-auto mb-10 font-bold text-center h3 title text-mainWhite" data-aos="zoom-out"
+          data-aos-delay="100">
+          Choose Full-Time Latin Talent. <br>
+          Get Real Results
+        </h2>
+      </div>
+      <div class="sectionContent">
+        <div class="grid grid-cols-1 gap-6 mb-10 cards sm:grid-cols-2 pcTab:grid-cols-4">
+
+          <div class="flex flex-col mx-auto overflow-hidden border card bg-mainWhite border-mainWhite w-fit md:w-full"
+            data-aos="zoom-out" data-aos-delay="150">
+            <div class="image">
+              <img class="block object-cover w-auto h-52 md:h-full md:w-full md:max-w-none"
+                src="{{ get_file('/images/talents_results01.png') }}">
+            </div>
+            <div class="flex items-center justify-center h-20 px-1 py-6 content">
+              <h3 class="text-xl font-bold leading-normal text-center text-darkBlue">
+                Flawless English
+              </h3>
+            </div>
+          </div>
+
+          <div class="flex flex-col mx-auto overflow-hidden border card bg-mainWhite border-mainWhite w-fit md:w-full"
+            data-aos="zoom-out" data-aos-delay="200">
+            <div class="image">
+              <img class="block object-cover w-auto h-52 md:h-auto md:w-full md:max-w-none"
+                src="{{ get_file('/images/talents_results02.png') }}">
+            </div>
+            <div class="flex items-center justify-center h-20 px-1 py-6 content">
+              <h3 class="text-xl font-bold leading-normal text-center text-darkBlue">
+                US Time Zones
+              </h3>
+            </div>
+          </div>
+
+          <div class="flex flex-col mx-auto overflow-hidden border card bg-mainWhite border-mainWhite w-fit md:w-full"
+            data-aos="zoom-out" data-aos-delay="250">
+            <div class="image">
+              <img class="block object-cover w-auto h-52 md:h-auto md:w-full md:max-w-none"
+                src="{{ get_file('/images/talents_results03.png') }}">
+            </div>
+            <div class="flex items-center justify-center h-20 px-1 py-6 content">
+              <h3 class="text-xl font-bold leading-normal text-center text-darkBlue">
+                Highly Motivated
+              </h3>
+            </div>
+          </div>
+
+          <div class="flex flex-col mx-auto overflow-hidden border card bg-mainWhite border-mainWhite w-fit md:w-full"
+            data-aos="zoom-out" data-aos-delay="300">
+            <div class="image">
+              <img class="block object-cover w-auto h-52 md:h-auto md:w-full md:max-w-none"
+                src="{{ get_file('/images/talents_results04.png') }}">
+            </div>
+            <div class="flex items-center justify-center h-20 px-1 py-6 content">
+              <h3 class="text-xl font-bold leading-normal text-center text-darkBlue">
+                Extensive <br>
+                Background Checks
+              </h3>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="buttonSection">
+          <div class="flex justify-center " data-aos="zoom-out" data-aos-delay="350">
+            {{ Button({
+            text: "See more",
+            url: "#0",
+            type: 'secondary'
+            }) }}
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+#}
+
+<section class="mb-10 pcTab:mb-20 homeSection_01">
+
+  <div class="max-w-6xl px-4 mx-auto sm:px-6">
+
+    {{ BannerCta_1({
+    title: 'Ready to transform your remote team?',
+    desc: '',
+    buttonText: 'Book your free consultation',
+    buttonLink: '',
+    }) }}
+
+  </div>
+
+</section>
+
+
+
+
+
+{% endblock %}

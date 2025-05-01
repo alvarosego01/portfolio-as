@@ -1,0 +1,39 @@
+{% macro Component(param = {
+table: []
+}) %}
+
+{% set table = param.table %}
+
+<div class="flex w-full mx-auto overflow-x-scroll shadow-sm pcTab:overflow-hidden pcTab:w-full rounded-xl scrollbar scrollbar-thumb-red-500 scrollbar-track-gray-200">
+
+<table class="w-full leading-normal">
+  <thead>
+    <tr>
+      {% for head in table.headers %}
+        <th
+          class="px-5 py-3 text-sm font-bold tracking-wider text-left text-gray-700 uppercase border-b-2 border-gray-200 bg-lightBlue">
+          {{ head }}
+        </th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for row in table.values %}
+      <tr>
+        {% for value in row %}
+        <td class="px-5 py-5 text-sm font-semibold bg-white border-b border-gray-200">
+          <p class="text-gray-900 whitespace-no-wrap">
+            {{ value }}
+          </p>
+        </td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+
+</div>
+
+{% endmacro %}

@@ -1,0 +1,219 @@
+{% from 'components/buttons/Button.twig' import Component as Button %}
+
+{% set logo = theme_settings['theme-settings'].global_header_logo %}
+
+<nav class="items-center justify-between hidden ml-1 md:ml-2 pcTab:flex md:grow">
+
+  <!-- Logo -->
+  <a class="block transition duration-150 ease-in-out" href="{{ home_url }}">
+    <img class="h-16 md:h-s_50 lg:h-s_75 onLazyLoad" data-src="{{ get_wp_img(logo, 'src') }}" alt="Header navbar logo">
+  </a>
+
+  <ul class="flex flex-row gap-2">
+    {% for item in menu %}
+    {% if item.children is not empty %}
+    <li class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+      <a class="flex items-center px-2 py-2 text-lg font-semibold transition duration-150 ease-in-out text-generalWhite lg:px-3 text-darkBlue"
+        href="{{ item.url }}" aria-haspopup="true" :aria-expanded="open" @focus="open = true" @focusout="open = false" >
+        {{ item.title }}
+        <svg class="w-3 h-3 ml-1 cursor-pointer fill-current text-generalWhite shrink-0" viewBox="0 0 12 12"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M10.28 4.305L5.989 8.598 1.695 4.305A1 1 0 00.28 5.72l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z" />
+        </svg>
+      </a>
+      <ul class="absolute right-0 w-[300px] p-0 ml-4 list-none origin-top-right bg-white rounded shadow-lg top-full"
+        x-show="open" x-transition:enter="transition ease-out duration-200 transform"
+        x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-out duration-200" x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0" x-cloak>
+        {% for child in item.children %}
+        <li class="hover:bg-lightBlue">
+          <a href="{{ child.url }}"
+            class="flex px-5 py-2 font-medium leading-tight text-md text-slate-600 hover:text-darkBlue "
+            @focus="open = true" @focusout="open = false">{{ child.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </li>
+
+    {% else %}
+
+    <li>
+      {% if item.properties.enable_is_button == 1 %}
+      {{ Button({
+          text: item.title,
+          url: item.url,
+          r_icon: "<i class='bx bx-right-arrow-alt'></i>",
+          type: item.properties.button_type
+      }) }}
+      {% else %}
+      <a href="{{ item.url }}"
+        class="flex items-center px-2 py-2 text-lg font-semibold transition duration-150 ease-in-out text-generalWhite lg:px-5 text-darkBlue">
+        {{ item.title }}
+      </a>
+      {% endif %}
+    </li>
+
+    {% endif %} {% endfor %}
+  </ul>
+
+  <ul class="">
+    {% for item in menu_right %}
+
+    {% if item.children is not empty %}
+
+    <li class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+      <a class="flex items-center px-2 py-2 text-lg font-semibold transition duration-150 ease-in-out text-generalWhite lg:px-3 text-darkBlue"
+        href="{{ item.url }}" aria-haspopup="true" :aria-expanded="open" @focus="open = true" @focusout="open = false" >
+        {{ item.title }}
+        <svg class="w-3 h-3 ml-1 cursor-pointer fill-current text-generalWhite shrink-0" viewBox="0 0 12 12"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M10.28 4.305L5.989 8.598 1.695 4.305A1 1 0 00.28 5.72l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z" />
+        </svg>
+      </a>
+      <ul class="absolute right-0 w-[300px] p-0 ml-4 list-none origin-top-right bg-white rounded shadow-lg top-full"
+        x-show="open" x-transition:enter="transition ease-out duration-200 transform"
+        x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-out duration-200" x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0" x-cloak>
+        {% for child in item.children %}
+        <li class="hover:bg-lightBlue">
+          <a href="{{ child.url }}"
+            class="flex px-5 py-2 font-medium leading-tight text-md text-slate-600 hover:text-darkBlue "
+            @focus="open = true" @focusout="open = false">{{ child.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </li>
+
+    {% else %}
+
+    <li>
+        {% if item.properties.enable_is_button == 1 %}
+          {{ Button({
+          text: item.title,
+          url: item.url,
+          r_icon: "<i class='bx bx-right-arrow-alt'></i>",
+          type: item.properties.button_type
+          }) }}
+
+        {% else %}
+        <a href="{{ item}}"
+          class="flex items-center px-2 py-2 text-lg font-semibold transition duration-150 ease-in-out text-generalWhite lg:px-5 text-darkBlue">
+          {{ item.title }}
+        </a>
+        {% endif %}
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
+
+<!-- Mobile menu -->
+<div class="flex justify-between w-full px-8 pcTab:hidden" x-data="{ expanded: false }">
+
+  <a class="block transition duration-150 ease-in-out" href="{{ home_url }}">
+    <img class="h-16 md:h-s_50 lg:h-s_75 onLazyLoad" data-src="{{ get_wp_img(logo, 'src') }}" alt="Header navbar logo">
+  </a>
+
+  <!-- Hamburger button -->
+  <button class="hamburger" :class="{ 'active': expanded }" @click.stop="expanded = !expanded"
+    aria-controls="mobile-nav" :aria-expanded="expanded">
+    <span class="sr-only">Menu</span>
+    <svg class="w-6 h-6 fill-current text-slate-900 dark:text-slate-600" viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg">
+      <rect y="4" width="24" height="2" />
+      <rect y="11" width="24" height="2" />
+      <rect y="18" width="24" height="2" />
+    </svg>
+  </button>
+
+  <!-- Mobile navigation -->
+
+  <nav id="mobile-nav" class="absolute left-0 z-20 w-full h-screen px-10 pb-16 overflow-scroll bg-white top-full no-scrollbar"
+    @click.away="expanded = false" @keydown.escape.window="expanded = false" x-show="expanded"
+    x-transition:enter="transition ease-out duration-200 transform" x-transition:enter-start="opacity-0 -translate-y-2"
+    x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-out duration-200"
+    x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-cloak>
+    <ul class="px-5 py-2 pl-0 mb-10 list-none ">
+      {% for item in menu %}
+      {% if item.children is not empty %}
+
+      <li class="py-2 my-2 border-b border-slate-200">
+        <a href="{{ item.url }}" class="flex py-2 font-semibold text-darkBlue ">
+          {{ item.title }}
+        </a>
+        <ul class="pl-4 list-none">
+          {% for child in item.children %}
+          <li>
+            <a class="flex py-2 font-medium text-md text-slate-600 " href="{{ child.url }}">
+              {{ child.title }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+
+      {% else %}
+
+      <li>
+        <a href="{{ item.url }}" class="flex py-2 font-medium text-darkBlue ">
+          {{ item.title }}
+        </a>
+      </li>
+
+      {% endif %}
+      {% endfor %}
+    </ul>
+    <ul class="px-5 py-2 pl-0 list-none">
+
+            {% for item in menu_right %}
+      {% if item.children is not empty %}
+
+      <li class="py-2 my-2 border-b border-slate-200">
+        <a href="{{ item.url }}" class="flex py-2 font-semibold text-darkBlue ">
+          {{ item.title }}
+        </a>
+        <ul class="pl-4 list-none">
+          {% for child in item.children %}
+          <li>
+            <a class="flex py-2 font-medium text-md text-slate-600 " href="{{ child.url }}">
+              {{ child.title }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+
+      {% else %}
+
+      {# <li>
+        <a href="{{ item.url }}" class="flex py-2 font-medium text-darkBlue ">
+          {{ item.title }}
+        </a>
+      </li> #}
+
+           {% if item.properties.enable_is_button == 1 %}
+          {{ Button({
+          text: item.title,
+          url: item.url,
+          r_icon: "<i class='bx bx-right-arrow-alt'></i>",
+          type: item.properties.button_type
+          }) }}
+
+        {% else %}
+        <a href="{{ item}}"
+          class="flex items-center px-2 py-2 text-lg font-semibold transition duration-150 ease-in-out text-generalWhite lg:px-5 text-darkBlue">
+          {{ item.title }}
+        </a>
+        {% endif %}
+
+      {% endif %}
+      {% endfor %}
+
+    </ul>
+
+  </nav>
+</div>

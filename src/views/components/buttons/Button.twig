@@ -1,0 +1,37 @@
+{#
+    @param {string} param.href - The URL the button links to.
+    @param {string} param.text - The text displayed on the button.
+    @param {string} param.r_icon - The icon displayed on the right side of the button.
+    @param {string} param.l_icon - The icon displayed on the left side of the button.
+    @param {string} param.classes - Additional CSS classes for the button.
+    @param {string} param.onClick - JavaScript function to be called on button click.
+
+#}
+{% macro Component(param = {
+    href: '',
+    text: '',
+    r_icon: '',
+    l_icon: '',
+    classes: '',
+    onClick: '',
+    type: 'primary'
+}) %}
+
+    {% if param.type == 'primary' %}
+        {% set b = 'text-white bg-darkBlue hover:!bg-darkBlue border-none ' %}
+    {% endif %}
+    {% if param.type == 'secondary' %}
+        {% set b = 'bg-mainWhite text-darkBlue border-lavenderGray hover:text-darkBlue hover:bg-mainWhite hover:border-lavenderGray' %}
+    {% endif %}
+
+    <a class="{{ param.classes }} hover:scale-105 w-auto text-sm md:text-lg  space-x-1 shadow-lg btn bg-gradient-to-t group h-auto pcTab:h-16 px-4 py-2 md:py-4 md:px-8 flex justify-center items-center rounded-full hover:!cursor-pointer {{ b }}"
+       {% if param.href %} href="{{ param.href }}"{% endif %}
+       {% if param.onClick %} onclick="{{ param.onClick }}"{% endif %}
+       >
+        {% if param.l_icon %} {{ param.l_icon }} {% endif %}
+        <span>
+        {{ param.text }}
+        </span>
+        {% if param.r_icon %} {{ param.r_icon }} {% endif %}
+    </a>
+{% endmacro %}
