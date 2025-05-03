@@ -1,9 +1,43 @@
 @charset "UTF-8";
 
-@use 'tailwind/tailwind.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=fallback');
+@import 'additional-styles/custom-fonts';
+
+@tailwind base;
+@tailwind components;
+
+
+/* Additional styles */
+@import 'additional-styles/utility-patterns.css';
+@import 'additional-styles/range-slider.css';
+@import 'additional-styles/toggle-switch.css';
+@import 'additional-styles/theme.css';
+
+// @import 'tailwindcss/utilities';
+@tailwind utilities;
 
 @use 'foundation';
 @use 'layouts';
+
+/* Additional Tailwind directives: https://tailwindcss.com/docs/functions-and-directives/#responsive */
+@layer utilities {
+	.rtl {
+		direction: rtl;
+	}
+}
+
+/* See Alpine.js: https://github.com/alpinejs/alpine#x-cloak */
+[x-cloak=""] {
+	display: none;
+}
+
+br.textBreak {
+	@apply hidden md:block
+}
+
+br.mobileBreak {
+	@apply block md:hidden
+}
 
 .hide {
 	display: none !important;
@@ -12,4 +46,3 @@
 * {
 	font-family: "Nunito Sans", sans-serif!important;
 }
-//

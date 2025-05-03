@@ -21,7 +21,7 @@ class HomeController extends PageBaseController
   protected function initialize()
   {
     $this->add_to_context([
-      'title' => 'ASTopTalent - Home',
+      'title' => 'Home',
     ]);
   }
 

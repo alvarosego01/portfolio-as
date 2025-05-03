@@ -100,7 +100,7 @@ class StarterSite extends Site
       wp_enqueue_style('box-icons', 'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
 
       wp_enqueue_style('styles', THEME_DIRECTORY_URI . '/assets/css/main.css', false, THEME_VERSION);
-      wp_enqueue_style('tailwind', THEME_DIRECTORY_URI . '/assets/css/tailwind.css', false, THEME_VERSION);
+      // wp_enqueue_style('tailwind', THEME_DIRECTORY_URI . '/assets/css/tailwind.css', false, THEME_VERSION);
       wp_enqueue_style('aos_css', THEME_DIRECTORY_URI . '/resources/css/vendors/aos.css', false, THEME_VERSION);
       wp_enqueue_style('animate_css', THEME_DIRECTORY_URI . '/resources/css/vendors/animate.css', false, THEME_VERSION);
 
