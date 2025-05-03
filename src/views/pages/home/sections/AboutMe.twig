@@ -1,0 +1,56 @@
+
+{% from 'components/buttons/Button.twig' import Component as Button %}
+
+
+<section class="relative mb-10">
+
+    <div class="absolute top-0 left-1/2  ml-[390px]" aria-hidden="true">
+        <img src="{{ get_file('/images/features-illustration.svg') }}" class="max-w-none" width="608" height="305" alt="Illustration">
+    </div>
+
+    <div class="max-w-6xl px-4 mx-auto sm:px-6">
+        <div class="py-12 md:py-20">
+
+            <div class="flex flex-col max-w-xl mx-auto space-y-8 space-y-reverse md:max-w-none md:flex-row md:items-center md:space-x-8 lg:space-x-16 xl:space-x-18 md:space-y-0">
+
+                <div class="md:w-5/12 lg:w-1/2" data-aos="zoom-out">
+                    <img class="mx-auto md:max-w-none" src="{{ get_file('/images/features-02.png') }}" width="540"
+                        height="581" alt="Features" />
+                </div>
+
+                <div class="order-1 md:w-7/12 lg:w-1/2 md:order-none" data-aos="zoom-out" data-aos-delay="200">
+
+                    <div class="text-center md:text-left">
+
+                        <h2 class="mb-4 h2 font-uncut-sans">
+                            About <span class="text-blue-600">Me</span>
+                        </h2>
+
+                        <p class="mb-6 text-xl text-gray-400">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.
+                            <br>
+                            <br>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam tempore laboriosam, ea
+                            sunt eius, facilis tenetur odit, explicabo nemo asperiores sequi deserunt cumque. Modi
+                            adipisci sint, mollitia doloribus repudiand
+                        </p>
+
+                        {{ Button({
+                            text: "Read more...",
+                            url: "#0",
+                            classes: 'w-fit',
+                            type: 'primary'
+                        }) }}
+                        {# l_icon: "<i class='bx bx-briefcase-alt'></i>", #}
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+</section>

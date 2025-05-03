@@ -18,13 +18,13 @@
 }) %}
 
     {% if param.type == 'primary' %}
-        {% set b = 'text-white bg-darkBlue hover:!bg-darkBlue border-none ' %}
+        {% set b = 'text-white from-blue-600 to-blue-400 hover:to-blue-500' %}
     {% endif %}
     {% if param.type == 'secondary' %}
-        {% set b = 'bg-mainWhite text-darkBlue border-lavenderGray hover:text-darkBlue hover:bg-mainWhite hover:border-lavenderGray' %}
+        {% set b = 'text-gray-300 bg-gradient-to-t from-gray-800 to-gray-700 hover:to-gray-800' %}
     {% endif %}
 
-    <a class="{{ param.classes }} hover:scale-105 w-auto text-sm md:text-lg  space-x-1 shadow-lg btn bg-gradient-to-t group h-auto pcTab:h-16 px-4 py-2 md:py-4 md:px-8 flex justify-center items-center rounded-full hover:!cursor-pointer {{ b }}"
+    <a class="{{ param.classes }} w-auto text-base  space-x-2 shadow-lg btn bg-gradient-to-t group flex justify-center items-center  hover:!cursor-pointer {{ b }}"
        {% if param.href %} href="{{ param.href }}"{% endif %}
        {% if param.onClick %} onclick="{{ param.onClick }}"{% endif %}
        >
