@@ -24,7 +24,7 @@
             "map": "--map"
         },
         "tailwind": {
-            "src": "src/scss/tailwind.css",
+            "src": "src/tailwind/tailwind.css",
             "dist": "assets/css/tailwind.css"
         },
         "twig": {
