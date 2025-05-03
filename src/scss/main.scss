@@ -3,18 +3,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=fallback');
 @import 'additional-styles/custom-fonts';
 
-@tailwind base;
-@tailwind components;
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+
 
 
 /* Additional styles */
-@import 'additional-styles/utility-patterns.css';
-@import 'additional-styles/range-slider.css';
-@import 'additional-styles/toggle-switch.css';
-@import 'additional-styles/theme.css';
+@import 'additional-styles/utility-patterns';
+@import 'additional-styles/range-slider';
+@import 'additional-styles/toggle-switch';
+@import 'additional-styles/theme';
 
-// @import 'tailwindcss/utilities';
-@tailwind utilities;
+// @tailwind utilities;
+@import 'tailwindcss/utilities';
 
 @use 'foundation';
 @use 'layouts';
