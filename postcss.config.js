@@ -1,13 +1,6 @@
 export default {
   plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
+    tailwindcss: {},    // → procesa @tailwind, @apply
+    autoprefixer: {}    // → añade prefixes
   }
 }
-
-// module.exports = {
-//     plugins: [
-//         require('tailwindcss'),
-//         require('autoprefixer'),
-//     ],
-// }

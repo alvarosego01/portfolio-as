@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
-@use 'foundation';
-@use 'layouts';
-@use 'tailwind/tailwind.css';
+@import 'tailwind/tailwind.css';
+
+@import 'global';
 
 .hide {
 	display: none !important;

@@ -33,4 +33,3 @@ br.textBreak {
 br.mobileBreak {
 	@apply block md:hidden
 }
-
