@@ -18,13 +18,13 @@
             "output": "assets/js"
         },
         "css": {
-            "src": "src/sass",
+            "src": "src/scss",
             "dist": "assets/css",
             "style": "compressed",
             "map": "--map"
         },
         "tailwind": {
-            "src": "resources/css/tailwind.css",
+            "src": "src/scss/tailwind.css",
             "dist": "assets/css/tailwind.css"
         },
         "twig": {
