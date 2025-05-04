@@ -1,3 +1,33 @@
+{% from 'components/icons/Angular.twig' import Component as Angular %}
+{% from 'components/icons/Ngrx.twig' import Component as Ngrx %}
+{% from 'components/icons/React.twig' import Component as React %}
+{% from 'components/icons/Redux.twig' import Component as Redux %}
+{% from 'components/icons/Socket-io.twig' import Component as Socketio %}
+{% from 'components/icons/Nestjs.twig' import Component as Nestjs %}
+{% from 'components/icons/Expressjs.twig' import Component as Express %}
+{% from 'components/icons/Ionic.twig' import Component as Ionic %}
+{% from 'components/icons/Nodejs.twig' import Component as Nodejs %}
+{% from 'components/icons/Docker.twig' import Component as Docker %}
+{% from 'components/icons/Typescript.twig' import Component as Typescript %}
+{% from 'components/icons/Javascript.twig' import Component as Javascript %}
+{% from 'components/icons/Html.twig' import Component as Html %}
+{% from 'components/icons/Css.twig' import Component as Css %}
+{% from 'components/icons/Sass.twig' import Component as Sass %}
+{% from 'components/icons/Tailwind.twig' import Component as Tailwind %}
+{% from 'components/icons/Bootstrap.twig' import Component as Bootstrap %}
+{% from 'components/icons/Php.twig' import Component as Php %}
+{% from 'components/icons/Laravel.twig' import Component as Laravel %}
+{% from 'components/icons/Symfony.twig' import Component as Symfony %}
+{% from 'components/icons/Wordpress.twig' import Component as Wordpress %}
+{% from 'components/icons/Postgresql.twig' import Component as Postgresql %}
+{% from 'components/icons/Mysql.twig' import Component as Mysql %}
+{% from 'components/icons/Mongodb.twig' import Component as Mongodb %}
+{% from 'components/icons/Python.twig' import Component as Python %}
+{% from 'components/icons/Vite.twig' import Component as Vite %}
+
+
+{% from 'components/icons/Git.twig' import Component as Git %}
+
 <section class="relative">
   <div class="relative max-w-6xl px-4 mx-auto sm:px-6">
 
@@ -17,7 +47,7 @@
     <div class="z-10 pt-16 pb-12 md:pt-20 md:pb-20">
 
       <!-- Section header -->
-      <div class="w-full pb-12 text-center md:pb-20 " data-aos="zoom-out" data-aos-delay="0">
+      <div class="w-full pb-12 text-center md:pb-20 " data-aos="zoom-out" data-aos-delay="100">
         <h2 class="mb-4 h2 font-uncut-sans">
           My skills as <span class="text-blue-600">FullStack</span>
         </h2>
@@ -27,37 +57,160 @@
       </div>
 
       <!-- Rows -->
-      <div class="grid grid-cols-1 gap-10 divide-y pcTab:divide-x pcTab:divide-y-0 pcTab:grid-cols-3 divide-slate-800">
-        <!-- Row -->
-        <div class="flex flex-col col-span-1 gap-2 py-8 ">
+      {# <div class="grid grid-cols-1 divide-y pcTab:divide-x pcTab:divide-y-0 pcTab:grid-cols-4 divide-slate-800"> #}
+        <div class="grid grid-cols-1 gap-10 px-10 divide-y divide-slate-800 pcTab:divide-y-0 pcTab:grid-cols-4 ">
+          <!-- Row -->
+          <div class="flex flex-col col-span-1 gap-2 py-8 pcTab:col-span-2 ">
 
-          <h4 class="font-bold leading-tight title h4 text-mainWhite">
-            Frontend
-          </h4>
+            <h4 class="font-bold leading-tight title h4 text-mainWhite" data-aos="zoom-out" data-aos-delay="100">
+              Frontend
+            </h4>
 
-          <p class="text-sm text-slate-400">
-            lorewm ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim
-          </p>
+            <p class="mb-6 text-sm text-slate-400" data-aos="zoom-out" data-aos-delay="100">
+              lorewm ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim
+            </p>
 
-        </div>
-        <div class="flex flex-col col-span-1 gap-2 py-8 ">
+            <div class="flex flex-row flex-wrap gap-8 pcTab:grid pcTab:grid-cols-4 skills" data-aos="zoom-out" data-aos-delay="150">
+              <div class="tooltip tooltip-left" data-tip="Angular">
+                {{ Angular() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="Angular + redux ngrx">
+                {{ Ngrx() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="React">
+                {{ React() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="Redux">
+                {{ Redux() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="Ionic">
+                {{ Ionic() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="Tailwind CSS">
+                {{ Tailwind() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="Bootstrap">
+                {{ Bootstrap() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="Socket.io">
+                {{ Socketio() }}
+              </div>
+            </div>
 
-          <h4 class="font-bold leading-tight title h4 text-mainWhite">
-            Frontend
-          </h4>
+          </div>
+          <div class="flex flex-col col-span-1 gap-2 py-8 pcTab:col-span-2 ">
 
-          <p class="text-sm text-slate-400">
-            lorewm ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim
-          </p>
+            <h4 class="font-bold leading-tight title h4 text-mainWhite" data-aos="zoom-out" data-aos-delay="100">
+              Backend
+            </h4>
+
+            <p class="mb-6 text-sm text-slate-400" data-aos="zoom-out" data-aos-delay="100">
+              lorewm ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim
+            </p>
+
+            <div class="flex flex-row flex-wrap gap-8 pcTab:grid pcTab:grid-cols-4 skills" data-aos="zoom-out" data-aos-delay="150">
+
+              <div class="tooltip tooltip-left" data-tip="Nest.js">
+                {{ Nestjs() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="Expres.js">
+                {{ Express() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="Node.js">
+                {{ Nodejs() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="Laravel">
+                {{ Laravel() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="Symfony">
+                {{ Symfony() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="PostgreSql">
+                {{ Postgresql() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="MySql">
+                {{ Mysql() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="MongoDB">
+                {{ Mongodb() }}
+              </div>
+
+            </div>
+
+          </div>
+          <div class="flex flex-col col-span-1 gap-2 py-8 pcTab:col-span-2 ">
+
+            <h4 class="font-bold leading-tight title h4 text-mainWhite" data-aos="zoom-out" data-aos-delay="100">
+              Languages and coding
+            </h4>
+
+            <p class="mb-6 text-sm text-slate-400" data-aos="zoom-out" data-aos-delay="100">
+              lorewm ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim
+            </p>
+
+            <div class="flex flex-row flex-wrap gap-8 pcTab:grid pcTab:grid-cols-4 skills" data-aos="zoom-out" data-aos-delay="150">
+
+
+              <div class="tooltip tooltip-left" data-tip="HTML">
+                {{ Html() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="CSS">
+                {{ Css() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="Javascript">
+                {{ Javascript() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="Typescript">
+                {{ Typescript() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="SASS/SCSS">
+                {{ Sass() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="PHP">
+                {{ Php() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="Python">
+                {{ Python() }}
+              </div>
+
+            </div>
+
+          </div>
+          <div class="flex flex-col col-span-1 gap-2 py-8 pcTab:col-span-2 ">
+
+            <h4 class="font-bold leading-tight title h4 text-mainWhite" data-aos="zoom-out" data-aos-delay="100">
+              Others
+            </h4>
+
+            <p class="mb-6 text-sm text-slate-400" data-aos="zoom-out" data-aos-delay="100">
+              lorewm ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim
+            </p>
+
+            <div class="flex flex-row flex-wrap gap-8 pcTab:grid pcTab:grid-cols-4 skills" data-aos="zoom-out" data-aos-delay="150">
+
+              <div class="tooltip tooltip-left" data-tip="Git">
+                {{ Git() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="Docker">
+                {{ Docker() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="Wordpress">
+                {{ Wordpress() }}
+              </div>
+              <div class="tooltip tooltip-left" data-tip="Vite">
+                {{ Vite() }}
+              </div>
+
+            </div>
+
+          </div>
 
         </div>
 
       </div>
-
     </div>
-  </div>
 </section>
-
-

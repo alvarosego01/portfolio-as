@@ -25,4 +25,26 @@ class HomeController extends PageBaseController
     ]);
   }
 
+  function setSKills(){
+
+    $skills = array(
+      "frontend" => [
+
+      ],
+      "backend" => [
+
+      ],
+      "other" => [
+
+      ]
+
+    );
+
+    $this->add_to_context([
+      'skills' => $skills,
+    ]);
+
+  }
+
 }
+
