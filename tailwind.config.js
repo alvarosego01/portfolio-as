@@ -10,14 +10,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "mainWhite": "#ffffff",
-        "darkBlue": "#365F92",
-        "tealBlue": "#358FAD",
-        "grayish": "#787F84",
-        "lightSteelBlue": "#95B3D7",
-        "paleBlue": "#C5D9F1",
-        "lavenderGray": "#D4D2E3",
-        "lightBlue": "#f5fcff",
+        "mainWhite": "#f3f4f6",
+        "primaryBlue": "#3b82f6",
+        "primaryRed": "#f43f5e",
+        "lightGray": "#9ca3af",
+
       },
       animation: {
         'endless': 'endless 20s linear infinite',

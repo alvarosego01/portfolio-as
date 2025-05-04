@@ -1,0 +1,47 @@
+
+
+{% macro Component(param = {
+  icon: '',
+  title: '',
+  desc: '',
+  align: 'left',
+  centerResponsive: false,
+}) %}
+
+{% if param.align == '' %}
+  {% set align = 'left' %}
+{% else %}
+  {% set align = param.align %}
+{% endif %}
+
+{% if param.centerResponsive == true %}
+  {% set centerParent = 'items-center pcTab:items-' ~ align %}
+  {% set centerTexts = 'text-center pcTab:text-' ~ align %}
+  {% else %}
+  {% set centerParent = 'items-' ~ align %}
+  {% set centerTexts = 'text-' ~ align %}
+
+{% endif %}
+
+<div class="flex flex-col justify-center gap-6 {{ centerParent }} info">
+
+  {% if param.icon != '' %}
+  <div class="flex justify-center pcTab:w-full icon {{ centerParent }}">
+    {# <img class="mx-auto md:max-w-none" src="{{ icon }}"> #}
+    {{ param.icon | raw }}
+  </div>
+  {% endif %}
+  <div class="flex flex-col w-full gap-4 content">
+    <h4 class="font-bold leading-tight {{ centerTexts }} title h4 text-mainWhite">
+      {{ param.title | raw }}
+    </h4>
+    <p class="text-lightGray text-lg {{ centerTexts }}">
+      {{ param.desc | raw }}
+    </p>
+
+  </div>
+
+</div>
+
+
+{% endmacro %}
