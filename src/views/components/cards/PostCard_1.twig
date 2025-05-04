@@ -1,0 +1,32 @@
+{#
+  src: '/images/talent_header.svg',
+  title: 'Hire Top Remote Talent in Latin America & Save Up 80%',
+  desc: 'ASTopTalent  Talent connects businesses with top-tier remote professionals, offering a diverse talent pool and cutting-edge virtual office space technology.',
+  alt: 'Post Card Image'
+
+#}
+{% macro Component(param = {
+    src: '',
+    title: '',
+    desc: '',
+    alt: ''
+}) %}
+
+<div class="flex flex-col gap-6 PostCard_1">
+
+  <div class="overflow-hidden image">
+    <img src="{{ param.src }}" alt="{{ param.alt }}" class="object-cover object-top w-auto h-auto mx-auto rounded-2xl md:w-10/12" />
+  </div>
+  <div class="info">
+    <h3 class="mb-2 text-2xl font-semibold leading-tight text-center title text-darkBlue">{{ param.title }}</h3>
+
+    {% if param.desc != '' %}
+      <p class="mb-4 text-base text-center desc text-grayish">{{ param.desc }}</p>
+    {% endif %}
+
+  </div>
+
+</div>
+
+
+{% endmacro %}
