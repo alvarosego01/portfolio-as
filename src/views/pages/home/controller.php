@@ -20,9 +20,112 @@ class HomeController extends PageBaseController
 
   protected function initialize()
   {
-    $this->add_to_context([
-      'title' => 'ASTopTalent - Home',
-    ]);
+    $this->setSKills();
   }
 
+  function setSKills()
+  {
+
+    $skills = array(
+      "frontend" => [
+        'title' => 'Frontend',
+        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. amet, consectetur adipiscing elit',
+        'tags' => [
+          [
+            'text' => 'Angular',
+            'icon' => 'angular'
+          ],
+          [
+            'text' => 'Ngrx',
+            'icon' => 'ngrx'
+          ],
+          [
+            'text' => 'React',
+            'icon' => 'react'
+          ],
+          [
+            'text' => 'Redux',
+            'icon' => 'redux'
+          ],
+          [
+            'text' => 'Ionic',
+            'icon' => 'ionic'
+          ],
+          [
+            'text' => 'TailwindCSS',
+            'icon' => 'tailwind'
+          ],
+          [
+            'text' => 'Bootstrap',
+            'icon' => 'bootstrap'
+          ],
+          [
+            'text' => 'Socket.io',
+            'icon' => 'socketio'
+          ],
+        ]
+      ],
+      "backend" => [
+        'title' => 'Backend',
+        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        'tags' => [
+          [
+            'text' => 'Nest.js',
+            'icon' => 'nestjs'
+          ],
+          [
+            'text' => 'Express.js',
+            'icon' => 'express'
+          ],
+          [
+            'text' => 'Node.js',
+            'icon' => 'nodejs'
+          ],
+          [
+            'text' => 'Laravel',
+            'icon' => 'laravel'
+          ],
+          [
+            'text' => 'Symfony',
+            'icon' => 'symfony'
+          ]
+        ]
+      ],
+      "languages" => [
+        'title' => 'Languages and code',
+        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      ],
+      "database" => [
+        'title' => 'Database',
+        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        'tags' => [
+              [
+            'text' => 'Postgresql',
+            'icon' => 'postgresql'
+          ],
+          [
+            'text' => 'Mysql',
+            'icon' => 'mysql'
+          ],
+          [
+            'text' => 'Mongodb',
+            'icon' => 'mongodb'
+          ]
+        ]
+      ],
+      "design" => [
+        'title' => 'Design',
+        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      ],
+      "others" => [
+        'title' => 'Others',
+        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      ]
+
+    );
+
+    $this->add_to_context([
+      'skills' => $skills,
+    ]);
+  }
 }
