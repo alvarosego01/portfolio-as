@@ -1,0 +1,26 @@
+{% macro Component(param = {
+text: '',
+icon: ''
+}) %}
+
+{% from 'components/icons/Icon_1.twig' import Component as Icon_1 %}
+
+
+{% set text = param.text %}
+{% set icon = param.icon %}
+
+<div
+  class="relative flex flex-row items-center justify-center gap-2 px-4 py-1 text-sm bg-gray-800 rounded-full">
+  <div class="h-[10px] icon">
+    {{
+      Icon_1({
+        icon: icon
+      })
+     }}
+  </div>
+  <span class="text text-lightGray">
+    {{ text }}
+  </span>
+</div>
+
+{% endmacro %}

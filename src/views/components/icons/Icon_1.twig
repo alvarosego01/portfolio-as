@@ -1,0 +1,93 @@
+{% macro Component(param = {
+  icon: ''
+}) %}
+
+{% from 'components/icons/Angular.twig' import Component as Angular %}
+{% from 'components/icons/Ngrx.twig' import Component as Ngrx %}
+{% from 'components/icons/React.twig' import Component as React %}
+{% from 'components/icons/Redux.twig' import Component as Redux %}
+{% from 'components/icons/Socket-io.twig' import Component as Socketio %}
+{% from 'components/icons/Nestjs.twig' import Component as Nestjs %}
+{% from 'components/icons/Expressjs.twig' import Component as Express %}
+{% from 'components/icons/Ionic.twig' import Component as Ionic %}
+{% from 'components/icons/Nodejs.twig' import Component as Nodejs %}
+{% from 'components/icons/Docker.twig' import Component as Docker %}
+{% from 'components/icons/Typescript.twig' import Component as Typescript %}
+{% from 'components/icons/Javascript.twig' import Component as Javascript %}
+{% from 'components/icons/Html.twig' import Component as Html %}
+{% from 'components/icons/Css.twig' import Component as Css %}
+{% from 'components/icons/Sass.twig' import Component as Sass %}
+{% from 'components/icons/Tailwind.twig' import Component as Tailwind %}
+{% from 'components/icons/Bootstrap.twig' import Component as Bootstrap %}
+{% from 'components/icons/Php.twig' import Component as Php %}
+{% from 'components/icons/Laravel.twig' import Component as Laravel %}
+{% from 'components/icons/Symfony.twig' import Component as Symfony %}
+{% from 'components/icons/Wordpress.twig' import Component as Wordpress %}
+{% from 'components/icons/Postgresql.twig' import Component as Postgresql %}
+{% from 'components/icons/Mysql.twig' import Component as Mysql %}
+{% from 'components/icons/Mongodb.twig' import Component as Mongodb %}
+{% from 'components/icons/Python.twig' import Component as Python %}
+{% from 'components/icons/Vite.twig' import Component as Vite %}
+{% from 'components/icons/Git.twig' import Component as Git %}
+
+{% set iconName = param.icon|lower %}
+
+{% if iconName == 'angular' %}
+  {{ Angular() }}
+{% elseif iconName == 'ngrx' %}
+  {{ Ngrx() }}
+{% elseif iconName == 'react' %}
+  {{ React() }}
+{% elseif iconName == 'redux' %}
+  {{ Redux() }}
+{% elseif iconName == 'socketio' %}
+  {{ Socketio() }}
+{% elseif iconName == 'nestjs' %}
+  {{ Nestjs() }}
+{% elseif iconName == 'expressjs' %}
+  {{ Express() }}
+{% elseif iconName == 'ionic' %}
+  {{ Ionic() }}
+{% elseif iconName == 'nodejs' %}
+  {{ Nodejs() }}
+{% elseif iconName == 'docker' %}
+  {{ Docker() }}
+{% elseif iconName == 'typescript' %}
+  {{ Typescript() }}
+{% elseif iconName == 'javascript' %}
+  {{ Javascript() }}
+{% elseif iconName == 'html' %}
+  {{ Html() }}
+{% elseif iconName == 'css' %}
+  {{ Css() }}
+{% elseif iconName == 'sass' %}
+  {{ Sass() }}
+{% elseif iconName == 'tailwind' %}
+  {{ Tailwind() }}
+{% elseif iconName == 'bootstrap' %}
+  {{ Bootstrap() }}
+{% elseif iconName == 'php' %}
+  {{ Php() }}
+{% elseif iconName == 'laravel' %}
+  {{ Laravel() }}
+{% elseif iconName == 'symfony' %}
+  {{ Symfony() }}
+{% elseif iconName == 'wordpress' %}
+  {{ Wordpress() }}
+{% elseif iconName == 'postgresql' %}
+  {{ Postgresql() }}
+{% elseif iconName == 'mysql' %}
+  {{ Mysql() }}
+{% elseif iconName == 'mongodb' %}
+  {{ Mongodb() }}
+{% elseif iconName == 'python' %}
+  {{ Python() }}
+{% elseif iconName == 'vite' %}
+  {{ Vite() }}
+{% elseif iconName == 'git' %}
+  {{ Git() }}
+{% else %}
+  {# Fallback for unknown icon value #}
+{% endif %}
+
+{% endmacro %}

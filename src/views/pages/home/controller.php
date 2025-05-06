@@ -20,22 +20,70 @@ class HomeController extends PageBaseController
 
   protected function initialize()
   {
-    $this->add_to_context([
-      'title' => 'ASTopTalent - Home',
-    ]);
+    $this->setSKills();
   }
 
-  function setSKills(){
+  function setSKills()
+  {
 
     $skills = array(
       "frontend" => [
-
+        'title' => 'Frontend',
+        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        'tags' => [
+          [
+            'text' => 'Angular',
+            'icon' => 'angular'
+          ],
+          [
+            'text' => 'Ngrx',
+            'icon' => 'ngrx'
+          ],
+          [
+            'text' => 'React',
+            'icon' => 'react'
+          ],
+          [
+            'text' => 'Redux',
+            'icon' => 'redux'
+          ],
+          [
+            'text' => 'Ionic',
+            'icon' => 'ionic'
+          ],
+          [
+            'text' => 'Tailwind',
+            'icon' => 'tailwind'
+          ],
+          [
+            'text' => 'Bootstrap',
+            'icon' => 'bootstrap'
+          ],
+          [
+            'text' => 'Socketio',
+            'icon' => 'socketio'
+          ],
+        ]
       ],
       "backend" => [
-
+        'title' => 'Backend',
+        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       ],
-      "other" => [
-
+      "languages" => [
+        'title' => 'Languages and code',
+        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      ],
+      "database" => [
+        'title' => 'Database',
+        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      ],
+      "design" => [
+        'title' => 'Design',
+        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      ],
+      "others" => [
+        'title' => 'Others',
+        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       ]
 
     );
@@ -43,8 +91,5 @@ class HomeController extends PageBaseController
     $this->add_to_context([
       'skills' => $skills,
     ]);
-
   }
-
 }
-
