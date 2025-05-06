@@ -10,15 +10,15 @@ icon: ''
 {% set icon = param.icon %}
 
 <div
-  class="relative flex flex-row items-center justify-center gap-2 px-4 py-1 text-sm bg-gray-800 rounded-full">
-  <div class="h-[10px] icon">
+  class="relative flex flex-row items-center justify-center gap-2 px-5 py-2 text-sm bg-gray-800 rounded-full">
+  <div class="h-6 icon">
     {{
       Icon_1({
         icon: icon
       })
      }}
   </div>
-  <span class="text text-lightGray">
+  <span class="font-semibold leading-normal text text-lightGray">
     {{ text }}
   </span>
 </div>

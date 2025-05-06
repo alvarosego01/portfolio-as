@@ -22,6 +22,9 @@ module.exports = {
         'float': 'float 2s ease-in-out infinite',
         'infinite-scroll': 'infinite-scroll 40s linear infinite',
       },
+      borderRadius: {
+        '4xl': '30px'
+      },
       keyframes: {
         'endless': {
           '0%': { transform: 'translateY(0)' },

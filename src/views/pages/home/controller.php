@@ -29,7 +29,7 @@ class HomeController extends PageBaseController
     $skills = array(
       "frontend" => [
         'title' => 'Frontend',
-        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. amet, consectetur adipiscing elit',
         'tags' => [
           [
             'text' => 'Angular',
@@ -52,7 +52,7 @@ class HomeController extends PageBaseController
             'icon' => 'ionic'
           ],
           [
-            'text' => 'Tailwind',
+            'text' => 'TailwindCSS',
             'icon' => 'tailwind'
           ],
           [
@@ -60,7 +60,7 @@ class HomeController extends PageBaseController
             'icon' => 'bootstrap'
           ],
           [
-            'text' => 'Socketio',
+            'text' => 'Socket.io',
             'icon' => 'socketio'
           ],
         ]
@@ -68,6 +68,28 @@ class HomeController extends PageBaseController
       "backend" => [
         'title' => 'Backend',
         'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        'tags' => [
+          [
+            'text' => 'Nest.js',
+            'icon' => 'nestjs'
+          ],
+          [
+            'text' => 'Express.js',
+            'icon' => 'express'
+          ],
+          [
+            'text' => 'Node.js',
+            'icon' => 'nodejs'
+          ],
+          [
+            'text' => 'Laravel',
+            'icon' => 'laravel'
+          ],
+          [
+            'text' => 'Symfony',
+            'icon' => 'symfony'
+          ]
+        ]
       ],
       "languages" => [
         'title' => 'Languages and code',
@@ -76,6 +98,20 @@ class HomeController extends PageBaseController
       "database" => [
         'title' => 'Database',
         'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        'tags' => [
+              [
+            'text' => 'Postgresql',
+            'icon' => 'postgresql'
+          ],
+          [
+            'text' => 'Mysql',
+            'icon' => 'mysql'
+          ],
+          [
+            'text' => 'Mongodb',
+            'icon' => 'mongodb'
+          ]
+        ]
       ],
       "design" => [
         'title' => 'Design',
