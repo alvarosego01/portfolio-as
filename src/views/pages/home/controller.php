@@ -94,6 +94,38 @@ class HomeController extends PageBaseController
       "languages" => [
         'title' => 'Languages and code',
         'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        'tags' => [
+
+          [
+            'text' => 'HTML',
+            'icon' => 'html'
+          ],
+          [
+            'text' => 'CSS',
+            'icon' => 'css'
+          ],
+          [
+            'text' => 'Sass / Scss',
+            'icon' => 'sass'
+          ],
+          [
+            'text' => 'Javascript',
+            'icon' => 'javascript'
+          ],
+          [
+            'text' => 'Typescript',
+            'icon' => 'typescript'
+          ],
+          [
+            'text' => 'PHP',
+            'icon' => 'php'
+          ],
+          [
+            'text' => 'Python',
+            'icon' => 'python'
+          ]
+
+        ]
       ],
       "database" => [
         'title' => 'Database',
