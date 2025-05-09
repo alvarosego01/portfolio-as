@@ -15,12 +15,13 @@ class HomeController extends PageBaseController
   public function __construct()
   {
     parent::__construct();
-    $this->general_functions = new generalFunctions();
   }
 
   protected function initialize()
   {
+    $this->general_functions = new generalFunctions();
     $this->setSKills();
+    // $this->setSKills();
   }
 
   function setSKills()
@@ -33,35 +34,35 @@ class HomeController extends PageBaseController
         'tags' => [
           [
             'text' => 'Angular',
-            'icon' => 'angular'
+            'icon' => $this->general_functions->get_file('/icons/angular.svg')
           ],
           [
             'text' => 'Ngrx',
-            'icon' => 'ngrx'
+            'icon' => $this->general_functions->get_file('/icons/ngrx.svg')
           ],
           [
             'text' => 'React',
-            'icon' => 'react'
+            'icon' => $this->general_functions->get_file('/icons/react.svg')
           ],
           [
             'text' => 'Redux',
-            'icon' => 'redux'
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/redux/redux-original.svg"
           ],
           [
             'text' => 'Ionic',
-            'icon' => 'ionic'
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/ionic/ionic-original.svg"
           ],
           [
             'text' => 'TailwindCSS',
-            'icon' => 'tailwind'
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/tailwindcss/tailwindcss-original.svg"
           ],
           [
             'text' => 'Bootstrap',
-            'icon' => 'bootstrap'
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/bootstrap/bootstrap-original.svg"
           ],
           [
             'text' => 'Socket.io',
-            'icon' => 'socketio'
+            'icon' => $this->general_functions->get_file('/icons/socket.io.svg')
           ],
         ]
       ],
@@ -71,23 +72,24 @@ class HomeController extends PageBaseController
         'tags' => [
           [
             'text' => 'Nest.js',
-            'icon' => 'nestjs'
+            // 'icon' => $this->general_functions->get_file('/icons/angular.svg')
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/nestjs/nestjs-original.svg"
           ],
           [
             'text' => 'Express.js',
-            'icon' => 'express'
+            'icon' => $this->general_functions->get_file('/icons/express.svg')
           ],
           [
             'text' => 'Node.js',
-            'icon' => 'nodejs'
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/nodejs/nodejs-original.svg"
           ],
           [
             'text' => 'Laravel',
-            'icon' => 'laravel'
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/laravel/laravel-original.svg"
           ],
           [
             'text' => 'Symfony',
-            'icon' => 'symfony'
+            'icon' => $this->general_functions->get_file('/icons/symfony.svg')
           ]
         ]
       ],
@@ -98,31 +100,32 @@ class HomeController extends PageBaseController
 
           [
             'text' => 'HTML',
-            'icon' => 'html'
+            // 'icon' => $this->general_functions->get_file('/icons/angular.svg')
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/html5/html5-original.svg"
           ],
           [
             'text' => 'CSS',
-            'icon' => 'css'
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/css3/css3-original.svg"
           ],
           [
             'text' => 'Sass / Scss',
-            'icon' => 'sass'
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/sass/sass-original.svg"
           ],
           [
             'text' => 'Javascript',
-            'icon' => 'javascript'
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/javascript/javascript-original.svg"
           ],
           [
             'text' => 'Typescript',
-            'icon' => 'typescript'
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/typescript/typescript-original.svg"
           ],
           [
             'text' => 'PHP',
-            'icon' => 'php'
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/php/php-original.svg"
           ],
           [
             'text' => 'Python',
-            'icon' => 'python'
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/python/python-original.svg"
           ]
 
         ]
@@ -133,15 +136,20 @@ class HomeController extends PageBaseController
         'tags' => [
               [
             'text' => 'Postgresql',
-            'icon' => 'postgresql'
+            // 'icon' => $this->general_functions->get_file('/icons/angular.svg')
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/postgresql/postgresql-original.svg"
           ],
           [
             'text' => 'Mysql',
-            'icon' => 'mysql'
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/mysql/mysql-original.svg"
+          ],
+          [
+            'text' => 'MariaDB',
+            'icon' => $this->general_functions->get_file('/icons/mariadb.svg')
           ],
           [
             'text' => 'Mongodb',
-            'icon' => 'mongodb'
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/mongodb/mongodb-original.svg"
           ]
         ]
       ],

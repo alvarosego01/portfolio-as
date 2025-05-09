@@ -9,13 +9,15 @@ icon: ''
 {% set icon = param.icon %}
 
 <div
-  class="relative flex flex-row items-center justify-center gap-2 px-5 py-2 text-sm bg-gray-800 rounded-full">
-  <div class="h-6 icon">
-    {{
-      Icon_1({
-        icon: icon
-      })
-     }}
+  class="relative flex flex-row items-center justify-center gap-2 px-5 py-2 text-sm bg-gray-800 rounded-full tag_1">
+  <div class="h-6 max-h-6 icon">
+    {% if icon != '' %}
+      {{
+        Icon_1({
+          icon: icon
+        })
+      }}
+    {% endif %}
   </div>
   <span class="font-semibold leading-normal text text-lightGray">
     {{ text }}

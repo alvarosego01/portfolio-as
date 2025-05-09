@@ -36,7 +36,6 @@
         "browser": "cross-conf-env browser-sync \"http://$npm_package_config_browsersync_proxy\" -f \"**/*.php\" \"$npm_package_config_css_dist\" \"$npm_package_config_twig_src\" \"$npm_package_config_js_output\" --port $npm_package_config_browsersync_port",
         "build": "run-p css vite",
         "css": "run-p sass tailwind",
-        "presass": "cross-conf-env stylelint \"$npm_package_config_css_src/**/*\" --fix",
         "sass": "cross-conf-env sass $npm_package_config_css_src:$npm_package_config_css_dist --style=compressed",
         "postsass": "cross-conf-env postcss $npm_package_config_css_dist/*.css --use=autoprefixer --dir=$npm_package_config_css_dist $npm_package_config_css_map",
         "tailwind": "cross-conf-env tailwindcss -i $npm_package_config_tailwind_src -o $npm_package_config_tailwind_dist --minify",
