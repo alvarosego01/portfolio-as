@@ -14,7 +14,12 @@ module.exports = {
         "primaryBlue": "#3b82f6",
         "primaryRed": "#f43f5e",
         "lightGray": "#9ca3af",
+        "borderGray": "#F5F5F580"
 
+      },
+      borderWidth: {
+        '0.5': '0.5px',
+        '1': '1px',
       },
       animation: {
         'endless': 'endless 20s linear infinite',

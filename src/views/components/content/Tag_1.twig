@@ -1,16 +1,17 @@
 {% macro Component(param = {
 text: '',
-icon: ''
+icon: '',
+iconCLass: ''
 }) %}
 
 {% from 'components/icons/Icon_1.twig' import Component as Icon_1 %}
 
 {% set text = param.text %}
 {% set icon = param.icon %}
+{% set iconCLass = param.iconCLass %}
 
-<div
-  class="relative flex flex-row items-center justify-center gap-2 px-5 py-2 text-sm bg-gray-800 rounded-full tag_1">
-  <div class="h-6 max-h-6 icon">
+<div class="relative flex flex-row items-center justify-center gap-2 px-4 py-1 text-sm bg-gray-800 rounded-full border-0.5 border-borderGray tag_1">
+  <div class="h-5 max-h-5 {{ iconCLass }} icon">
     {% if icon != '' %}
       {{
         Icon_1({

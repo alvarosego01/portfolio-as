@@ -57,18 +57,32 @@ class HomeController extends PageBaseController
             'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/tailwindcss/tailwindcss-original.svg"
           ],
           [
+            'text' => 'Material UI',
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/materialui/materialui-original.svg"
+          ],
+          [
             'text' => 'Bootstrap',
             'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/bootstrap/bootstrap-original.svg"
           ],
           [
+            'text' => 'jQuery',
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/jquery/jquery-original.svg"
+          ],
+          [
+            'text' => 'Alpine.js',
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/alpinejs/alpinejs-original.svg",
+            "iconClass" => "bg-white"
+          ],
+          [
             'text' => 'Socket.io',
-            'icon' => $this->general_functions->get_file('/icons/socket.io.svg')
+            'icon' => $this->general_functions->get_file('/icons/socket.io.svg'),
+
           ],
         ]
       ],
       "backend" => [
         'title' => 'Backend',
-        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. amet, consectetur adipiscing elit',
         'tags' => [
           [
             'text' => 'Nest.js',
@@ -78,6 +92,11 @@ class HomeController extends PageBaseController
           [
             'text' => 'Express.js',
             'icon' => $this->general_functions->get_file('/icons/express.svg')
+          ],
+          [
+            'text' => 'Feathers.js',
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/feathersjs/feathersjs-original.svg",
+            "iconClass" => "bg-white"
           ],
           [
             'text' => 'Node.js',
@@ -90,12 +109,35 @@ class HomeController extends PageBaseController
           [
             'text' => 'Symfony',
             'icon' => $this->general_functions->get_file('/icons/symfony.svg')
-          ]
+          ],
+          [
+            'text' => 'Codeigniter',
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/codeigniter/codeigniter-plain.svg"
+          ],
+          [
+            'text' => 'Prisma',
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/prisma/prisma-original.svg",
+            "iconClass" => "bg-white"
+          ],
+          [
+            'text' => 'MikroORM',
+            'icon' => $this->general_functions->get_file('/icons/mikro-orm.svg')
+            // "iconClass" => "bg-white"
+          ],
+          [
+            'text' => 'TypeORM',
+            'icon' => $this->general_functions->get_file('/icons/typeorm.svg')
+          ],
+          [
+            'text' => 'Socket.io',
+            'icon' => $this->general_functions->get_file('/icons/socket.io.svg')
+          ],
         ]
       ],
+
       "languages" => [
         'title' => 'Languages and code',
-        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. amet, consectetur adipiscing elit',
         'tags' => [
 
           [
@@ -132,34 +174,130 @@ class HomeController extends PageBaseController
       ],
       "database" => [
         'title' => 'Database',
-        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. amet, consectetur adipiscing elit',
         'tags' => [
-              [
+          [
             'text' => 'Postgresql',
             // 'icon' => $this->general_functions->get_file('/icons/angular.svg')
             'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/postgresql/postgresql-original.svg"
           ],
           [
             'text' => 'Mysql',
-            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/mysql/mysql-original.svg"
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/mysql/mysql-original.svg",
+            "iconClass" => "bg-white"
           ],
           [
             'text' => 'MariaDB',
-            'icon' => $this->general_functions->get_file('/icons/mariadb.svg')
+            'icon' => $this->general_functions->get_file('/icons/mariadb.svg'),
+            "iconClass" => "bg-white"
           ],
           [
             'text' => 'Mongodb',
             'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/mongodb/mongodb-original.svg"
+          ],
+          [
+            'text' => 'DynamoDB',
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/dynamodb/dynamodb-original.svg"
           ]
         ]
       ],
       "design" => [
-        'title' => 'Design',
-        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        'title' => 'Workflow and design',
+        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. amet, consectetur adipiscing elit',
+        'tags' => [
+          [
+            'text' => 'Github',
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/github/github-original.svg",
+            "iconClass" => "bg-white"
+          ],
+          [
+            'text' => 'Bitbucket',
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/bitbucket/bitbucket-original.svg",
+          ],
+          [
+            'text' => 'Gitlab',
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/gitlab/gitlab-original.svg",
+          ],
+          [
+            'text' => 'Jira',
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/jira/jira-original.svg"
+          ],
+          [
+            'text' => 'Trello',
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/trello/trello-original.svg"
+          ],
+          [
+            'text' => 'Asana',
+            'icon' => $this->general_functions->get_file('/icons/asana.svg')
+          ],
+          [
+            'text' => 'Figma',
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/figma/figma-original.svg"
+          ],
+          [
+            'text' => 'Miro',
+            'icon' => $this->general_functions->get_file('/icons/miro.svg')
+          ],
+          [
+            'text' => 'Canva',
+            'icon' => $this->general_functions->get_file('/icons/canva.svg')
+          ]
+        ]
       ],
       "others" => [
         'title' => 'Others',
-        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. amet, consectetur adipiscing elit',
+        'tags' => [
+          [
+            'text' => 'Docker',
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/docker/docker-original.svg"
+          ],
+          [
+            'text' => 'Insomnia',
+            'icon' => $this->general_functions->get_file('/icons/insomnia.svg')
+          ],
+          [
+            'text' => 'Postman',
+            'icon' => $this->general_functions->get_file('/icons/postman.svg')
+          ],
+          [
+            'text' => 'Apache',
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/apache/apache-original.svg",
+            "iconClass" => "bg-white"
+          ],
+          [
+            'text' => 'Nginx',
+            'icon' => $this->general_functions->get_file('/icons/nginx.svg')
+          ],
+          [
+            'text' => 'Npm',
+            'icon' => $this->general_functions->get_file('/icons/npm.svg')
+          ],
+          [
+            'text' => 'Pnpm',
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/pnpm/pnpm-original.svg"
+          ],
+          [
+            'text' => 'Yarn',
+            'icon' => $this->general_functions->get_file('/icons/yarn.svg')
+          ],
+          [
+            'text' => 'Composer',
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/composer/composer-original.svg"
+          ],
+          [
+            'text' => 'Vite',
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/vitejs/vitejs-original.svg"
+          ],
+          [
+            'text' => 'Webpack',
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/webpack/webpack-original.svg"
+          ],
+          [
+            'text' => 'Gulp',
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/gulp/gulp-plain.svg"
+          ],
+        ]
       ]
 
     );
