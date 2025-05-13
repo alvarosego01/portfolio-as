@@ -13,6 +13,7 @@ module.exports = {
         "mainWhite": "#f3f4f6",
         "primaryBlue": "#3b82f6",
         "primaryRed": "#f43f5e",
+        "navyBlue": "#141e38",
         "lightGray": "#9ca3af",
         "borderGray": "#F5F5F580"
 

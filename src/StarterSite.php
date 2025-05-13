@@ -1,6 +1,7 @@
 <?php
 
 use App\Classes\CarbonFields;
+use App\Classes\CertificationsPostType;
 use App\Classes\generalFunctions;
 use App\Classes\Menus_Handler;
 use Timber\Site;
@@ -120,7 +121,9 @@ class StarterSite extends Site
   /**
    * This is where you can register custom post types.
    */
-  public function register_post_types() {}
+  public function register_post_types() {
+    (new CertificationsPostType())->__init();
+  }
 
   /**
    * This is where you can register custom taxonomies.
@@ -320,7 +323,7 @@ class StarterSite extends Site
 
     $twig->addFunction(new Twig\TwigFunction('get_color', [new generalFunctions(), 'get_color']));
     $twig->addFunction(new Twig\TwigFunction('get_file', [new generalFunctions(), 'get_file']));
-    $twig->addFunction(new Twig\TwigFunction('get_wp_img', [new generalFunctions(), 'get_wp_img']));
+    $twig->addFunction(new Twig\TwigFunction('get_wp_file', [new generalFunctions(), 'get_wp_file']));
     $twig->addFunction(new Twig\TwigFunction('print_r', [new generalFunctions(), 'print_r']));
 
 

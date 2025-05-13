@@ -37,7 +37,7 @@ class generalFunctions
     }
   }
 
-  public function get_wp_img($image_id,  $type)
+  public function get_wp_file($image_id,  $type)
   {
     $image_url = wp_get_attachment_url($image_id);
     $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);

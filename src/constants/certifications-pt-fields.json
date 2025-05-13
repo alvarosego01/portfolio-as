@@ -1,0 +1,27 @@
+[
+  {
+    "post_type": "certification",
+    "name": "Fields",
+    "fields": [
+      {
+        "key": "url_external",
+        "label": "Url external",
+        "type": "url",
+        "default": "#"
+      },
+      {
+        "key": "file_certification",
+        "label": "File",
+        "type": "file",
+        "default": ""
+      },
+      {
+        "key": "date_certification",
+        "label": "Date",
+        "type": "date",
+        "format": "d/m/y",
+        "default": ""
+      }
+    ]
+  }
+]

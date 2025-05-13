@@ -17,7 +17,7 @@ class CarbonFields
     add_action('after_setup_theme', array($this, 'carbon_fields_init'));
     add_action('carbon_fields_register_fields', [$this, 'set_properties_nav_menu']);
     add_action('carbon_fields_register_fields', [$this, 'register_theme_ops']);
-    // add_action('carbon_fields_register_fields', [$this, 'register_custom_postTypes_ops']);
+    add_action('carbon_fields_register_fields', [$this, 'register_custom_postTypes_fields']);
     // add_action('carbon_fields_register_fields', [$this, 'register_blocks']);
   }
 
@@ -26,7 +26,6 @@ class CarbonFields
     require_once(get_template_directory() . '/vendor/autoload.php');
     \Carbon_Fields\Carbon_Fields::boot();
   }
-
 
   function load_theme_settings()
   {
@@ -47,6 +46,24 @@ class CarbonFields
       }
 
       return $settings;
+    } else {
+
+      return array();
+    }
+  }
+
+  function  get_custom_postType_fields($post_id, $path)
+  {
+    if (file_exists(get_theme_file_path($path))) {
+
+      $fieldsSource = json_decode(file_get_contents(get_theme_file_path($path)), true);
+      $fields = array();
+
+      foreach ($fieldsSource as $setting) {
+        $fields = $this->get_layer_postType_settings($setting, $post_id);
+      }
+
+      return $fields;
     } else {
 
       return array();
@@ -76,9 +93,7 @@ class CarbonFields
   private function get_layer_postType_settings($post, $post_id, $setting_id = null)
   {
 
-
     $settings = array();
-
     $setting_id = isset($post['post_type']) ? $post['post_type'] : $setting_id;
     $settings = array();
 
@@ -136,11 +151,11 @@ class CarbonFields
     }
   }
 
-  public function register_custom_postTypes_ops()
+  public function register_custom_postTypes_fields()
   {
-    if (file_exists(get_theme_file_path("/src/constants/forms_postTypes_options.json"))) {
+    if (file_exists(get_theme_file_path("/src/constants/certifications-pt-fields.json"))) {
 
-      $json_path = get_theme_file_path('/src/constants/forms_postTypes_options.json');
+      $json_path = get_theme_file_path('/src/constants/certifications-pt-fields.json');
       if (file_exists($json_path)) {
         $settings = json_decode(file_get_contents($json_path), true);
         if (isset($settings) && is_array($settings) && !empty($settings)) {

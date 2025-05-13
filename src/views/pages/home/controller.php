@@ -1,5 +1,6 @@
 <?php
 
+use App\Classes\CertificationsPostType;
 use App\Classes\PageBaseController;
 use App\Classes\generalFunctions;
 
@@ -11,6 +12,7 @@ class HomeController extends PageBaseController
   public static string $template_name = 'Page - Home';
 
   protected $general_functions;
+  protected $certifications_posttype;
 
   public function __construct()
   {
@@ -19,9 +21,19 @@ class HomeController extends PageBaseController
 
   protected function initialize()
   {
+    $this->certifications_posttype = new CertificationsPostType();
     $this->general_functions = new generalFunctions();
     $this->setSKills();
-    // $this->setSKills();
+    $this->setCertifications();
+  }
+
+  function setCertifications()
+  {
+    $certifications = $this->certifications_posttype->getAll();
+
+    $this->add_to_context([
+      'certifications' => $certifications,
+    ]);
   }
 
   function setSKills()
@@ -132,6 +144,9 @@ class HomeController extends PageBaseController
             'text' => 'Socket.io',
             'icon' => $this->general_functions->get_file('/icons/socket.io.svg')
           ],
+          [
+            'text' => 'Microservices',
+          ],
         ]
       ],
 
@@ -221,6 +236,10 @@ class HomeController extends PageBaseController
           [
             'text' => 'Jira',
             'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/jira/jira-original.svg"
+          ],
+          [
+            'text' => 'CI/CD',
+            'icon' => "https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/githubactions/githubactions-original.svg"
           ],
           [
             'text' => 'Trello',
