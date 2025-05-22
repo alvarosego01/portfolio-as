@@ -25,6 +25,7 @@ class HomeController extends PageBaseController
     $this->general_functions = new generalFunctions();
     $this->setSKills();
     $this->setCertifications();
+    $this->setExperienceTabs();
   }
 
   function setCertifications()
@@ -33,6 +34,32 @@ class HomeController extends PageBaseController
 
     $this->add_to_context([
       'certifications' => $certifications,
+    ]);
+  }
+
+  function setExperienceTabs(){
+    $experience_tabs = array(
+      "escala" => [
+        'title' => 'Escala',
+        'sub' => 'Fullstack Developer',
+        'date' => '2022 - Present',
+        'content' => 'tab1',
+        'icon' => $this->general_functions->get_file('/images/logos/escala.png'),
+        'alt'=> 'escala crm work experiencie full stack alvaro segovia',
+      ],
+      "escala-wordpress" => [
+        'title' => 'Escala',
+        'sub' => 'Fullstack Developer',
+        'date' => '2022 - Present',
+        'content' => 'tab2',
+        'icon' => $this->general_functions->get_file('/images/logos/escala.png'),
+        'alt'=> 'escala crm work experiencie full stack alvaro segovia',
+      ],
+
+    );
+
+    $this->add_to_context([
+      'experience_tabs' => $experience_tabs,
     ]);
   }
 

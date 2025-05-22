@@ -1,0 +1,127 @@
+{% from 'pages/home/sections/experience/tab1.twig' import Component as tab1 %}
+{% from 'pages/home/sections/experience/tab2.twig' import Component as tab2 %}
+
+<section class="relative block mt-24 mb-12 ">
+
+  <div
+    class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-800 to-gray-900 opacity-60 h-[10rem] pointer-events-none "
+    aria-hidden="true"></div>
+
+  <div class="relative flex flex-col max-w-6xl gap-12 px-4 pb-12 mx-auto sm:px-6">
+
+    <div class=" titleContent" data-aos="zoom-out" data-aos-delay="100">
+      <h2 class="mb-4 text-center h2 font-uncut-sans">
+        My <span class="text-primaryBlue">Experience</span>
+      </h2>
+      <p class="text-lg text-center text-slate-400">
+        Many desktop publishing packages and web page editors now use lorem
+        ipsum as their default model text, and a
+      </p>
+    </div>
+
+    <div class="content">
+
+      <div class="grid grid-cols-1 gap-10 pcTab:grid-cols-2 ">
+
+        <!-- Tabs -->
+        <ul class="flex flex-col w-full col-span-1 gap-2 experience-tabs ">
+
+          {% set delay = 100 %}
+          {% for tab in experience_tabs %}
+          {% set delay = delay + 50 %}
+
+          <li class="flex flex-col h-auto" content="{{ tab.content }}"
+          data-aos="zoom-out" data-aos-delay="{{ delay }}"
+          >
+
+            <div
+              class="relative flex flex-row items-center justify-start h-auto gap-4 px-4 py-2 font-semibold text-gray-800 border border-r border-gray-800 tab rounded-2xl hover:cursor-pointer hover:bg-navyBlue trans">
+
+
+              <div class="icon">
+                <img class="w-auto h-8" src="{{ tab.icon }}" alt="{{ tab.alt }}">
+              </div>
+              <div class="flex flex-col justify-start info">
+                <h4 class="text-sm text-left title text-mainWhite">
+                  {{ tab.title }}
+                </h4>
+                <span class="text-xs text-lightGray">
+                  {{ tab.sub }}
+                </span>
+              </div>
+
+              <span
+                class="absolute top-0 bottom-0 right-0 block p-1 px-3 m-auto mr-4 text-xs font-light rounded-xl text-mainWhite bg-primaryBlue w-fit h-fit date">
+                {{ tab.date }}
+              </span>
+
+            </div>
+
+            <div class="pcTab:hidden tab-contents">
+
+              {% if tab.content == 'tab1' %}
+              <div tabContent="tab1" class="p-4 tabContent animate__animated animate__fadeIn">
+                {{ tab1() }}
+              </div>
+              {% endif %}
+
+              {% if tab.content == 'tab2' %}
+              <div tabContent="tab2" class="hidden p-4 tabContent animate__animated animate__fadeIn">
+                {{ tab2() }}
+              </div>
+              {% endif %}
+
+            </div>
+
+          </li>
+
+          {% endfor %}
+
+        </ul>
+
+        <div class="hidden col-span-1 pcTab:block tab-contents">
+
+          <div tabContent="tab1" class="p-4 tabContent animate__animated animate__fadeIn">
+            {{ tab1() }}
+          </div>
+          <div tabContent="tab2" class="hidden p-4 tabContent animate__animated animate__fadeIn">
+            {{ tab2() }}
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+
+  const tabs = document.querySelectorAll('.experience-tabs li');
+  const tabContents = document.querySelectorAll('.tab-contents .tabContent ');
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+
+      const tabSelector = tab.querySelector('.tab');
+
+      tabs.forEach(t => t.querySelector('.tab').classList.remove('active', 'bg-navyBlue', 'border-lightGray'));
+      tabSelector.classList.add('active', 'bg-navyBlue', 'border-lightGray');
+
+      const currentContent = tab.getAttribute('content');
+      document.querySelectorAll('.tab-contents').forEach(container => {
+        container.querySelectorAll('.tabContent').forEach(tc => tc.classList.add('hidden'));
+        const activeContent = container.querySelector(`[tabContent="${currentContent}"]`);
+        if (activeContent) {
+          activeContent.classList.remove('hidden');
+        }
+      });
+
+    });
+  });
+
+</script>

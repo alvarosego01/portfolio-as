@@ -21,13 +21,15 @@
           {% set count = count + 50 %}
           {% set fields = cert.fields %}
 
-          <div class="flex flex-col col-span-1 gap-4 p-4 cert bg-navyBlue rounded-2xl " data-aos="zoom-out" data-aos-delay="{{ count }}" >
+          <div class="flex flex-col w-10/12 col-span-1 gap-4 mx-auto overflow-hidden cert bg-navyBlue rounded-2xl pcTab:w-auto " data-aos="zoom-out" data-aos-delay="{{ count }}" >
               <div class="image">
                 <a href="{{ fields.url_external }}" target="_blank">
-                  <img src="{{ cert.thumbnail }}" alt="{{ cert.title }}" class="block m-auto rounded-2xl">
+                  <img src="{{ cert.thumbnail }}" alt="{{ cert.post_title }}" class="block m-auto">
                 </a>
               </div>
-              <h4 class="h-12 mb-4 text-lg font-semibold pcTab:text-sm title text-mainWhite ">
+              <div class="p-4 pt-0">
+
+              <h4 class="h-auto mb-4 text-lg font-semibold pcTab:h-12 pcTab:text-sm title text-mainWhite ">
                 <a href="{{ fields.url_external }}" target="_blank">
                 {{ cert.post_title }}
                 </a>
@@ -42,6 +44,7 @@
                 <a href="{{ get_wp_file(fields.file_certification, 'url') }}" class="flex items-center justify-center w-8 h-8 p-1 rounded-lg download bg-emerald-400" target="_blank">
                   <i class='text-lg bx bx-download' ></i>
                 </a>
+              </div>
               </div>
           </div>
 
